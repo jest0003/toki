@@ -1,0 +1,37 @@
+    body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  main {
+    max-width: 1160px;
+  }
+  @font-face {
+    font-family: karla-r;
+    src: url(../assets/Karla-Regular.ttf);
+  }
+  @font-face {
+    font-family: karla-sb;
+    src: url(../assets/Karla-SemiBold.tff);
+  }
+  @font-face {
+    font-family: libre-i;
+    src: url(../assets/LibreBaskerville-Italic.tff);
+  }
+  @font-face {
+    font-family: libre-r;
+    src: url(../assets/LibreBaskerville-Regular.ttf);
+  }
+
+  h1 {
+    font-family: libre-r;
+    font-size: 48px;
+  }
+  h2 {
+    font-family: karla-r;
+    font-size: 32px;
+  }
+  p {
+    font-family: karla-r;
+    font-size: 18px;
+  }
