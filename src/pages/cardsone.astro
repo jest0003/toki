@@ -1,0 +1,39 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Cards.astro";
+import Button from "../components/Button.astro";
+const endpoint =
+  "https://caasukwezdmtsmfxxqun.supabase.co/rest/v1/Cases?limit=4";
+const key =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNhYXN1a3dlemRtdHNtZnh4cXVuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjMwMTU1NTQsImV4cCI6MjA3ODU5MTU1NH0.YO2MqAkxjdggCNmn_ZgeiqU7Jm2CPZq7WxevzlmjOXE";
+const options = {
+  method: "GET",
+  headers: {
+    apikey: key,
+  },
+};
+const data = await fetch(endpoint, options).then((res) => res.json());
+---
+
+<Layout>
+  <h1>Our cases</h1>
+  <section class="card-grid">
+    {data.map((product) => <Card data={product} />)}
+  </section>
+  <Button variant="primary">See our cases</Button>
+</Layout>
+
+<style>
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-left: 1em;
+    margin-bottom: 2em;
+    justify-items: left;
+  }
+
+  h1 {
+    margin-left: 0.5em;
+    font-size: 3em;
+  }
+</style>
