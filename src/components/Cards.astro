@@ -1,0 +1,41 @@
+---
+const { data } = Astro.props;
+---
+
+<article>
+  <h2 class="title">{data.case_name}</h2>
+  <img
+    src={`https://caasukwezdmtsmfxxqun.supabase.co/storage/v1/object/public/Cases/${data.img}`}
+    alt="Placeholder img"
+  />
+  <p class="info">{data.case_info}</p>
+</article>
+
+<style>
+  img {
+    display: block;
+    width: 200px;
+    max-height: fit-content;
+    object-fit: contain;
+    border-radius: 5px;
+    margin: 0 auto 0px;
+  }
+  .title {
+    font-size: 15px;
+    color: rgba(29, 29, 29, 0.762);
+    height: 40px;
+    display: flex;
+    align-items: center;
+    margin: 0 0 10px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+  }
+
+  .price-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+  }
+</style>
