@@ -1,12 +1,37 @@
 ---
 import general from "../css/General.css";
+import logo from "../img/TokiLogo.png";
 ---
 
-<section>
+<section class="footer">
   <nav>
     <a href="/">About TÓKI</a>
     <a href="/">Contact</a>
     <a href="/">Cases</a>
   </nav>
-  <img src="../img/TokiLogo.png" alt="" />
+  <img src={logo.src} alt="Tóki's logo" />
+  <section>
+    <p>Would you like to collaborate?</p>
+    <div><input type="email" /><button></button></div>
+  </section>
 </section>
+
+<style>
+  @font-face {
+    font-family: karla-r;
+    src: url(../fonts/Karla-Regular.ttf);
+  }
+  .footer {
+    display: flex;
+  }
+  a {
+    text-decoration: none;
+    color: #292e2b;
+    font-size: 28px;
+    font-family: karla-r;
+  }
+  p {
+    color: #292e2b;
+    font-size: 28px;
+  }
+</style>
