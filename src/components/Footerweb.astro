@@ -1,18 +1,23 @@
 ---
 import general from "../css/General.css";
 import logo from "../img/TokiLogo.png";
+import fHover from "../img/footer_hover.png"
 ---
 
 <section class="footer">
-  <nav>
+  <div><nav>
     <a href="/">About TÓKI</a>
     <a href="/">Contact</a>
     <a href="/">Cases</a>
   </nav>
+  <p>Mail: hello@toki.house</p>
+  <p>Phone: +45 12345678</p>
+</div>
   <img src={logo.src} alt="Tóki's logo" />
   <section>
-    <p>Would you like to collaborate?</p>
-    <div><input type="email" /><button></button></div>
+    <h3>Would you like to collaborate?</h3>
+    <div class="email">
+      <input type="email" placeholder="Type your email here..." /><button>-></button></div>
   </section>
 </section>
 
@@ -23,15 +28,59 @@ import logo from "../img/TokiLogo.png";
   }
   .footer {
     display: flex;
+    justify-content: space-around;
+    background-image: linear-gradient(to bottom, #F6F2ED, #DED2BA);
+    padding-top: 60px;
+    padding-bottom: 30px;
+  }
+  .email {display: flex;
+  align-items: center;
+justify-content: start;}
+nav {
+  margin-bottom: 20px;
+}
+  input {
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+    height: 30px;
+    margin: 0;
+    border-style: solid 1px #38485C;
+    border-right: none;
+    padding-left: 10px;
+  }
+  button {
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    height: 36px;
+    margin: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-style: none;
+    background-color: #38485C;
+    color: #F6F2ED;
   }
   a {
     text-decoration: none;
     color: #292e2b;
     font-size: 28px;
     font-family: karla-r;
+    margin-right: 30px;
+  }
+  a:hover {
+background-image: ;
+  }
+  h3 {
+    color: #292e2b;
+    font-size: 28px;
+    font-family: karla-r;
+    margin-top: 10px;
+    margin-bottom: 5px;
   }
   p {
     color: #292e2b;
-    font-size: 28px;
+    font-size: 14px;
+    font-family: karla-r;
+    margin: 3px;
+
   }
 </style>
