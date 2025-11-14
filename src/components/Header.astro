@@ -1,0 +1,58 @@
+---
+import logo from "../img/TokiLogo.png";
+import hoverline from "../img/hoverline.svg";
+---
+
+<header>
+  <div class="header">
+    <div><img src={logo.src} " alt="Logo" /></div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/cases">Cases</a>
+      <a href="/toki-family">Toki Family</a>
+    </nav>
+  </div>
+</header>
+<style>
+  .header {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1160px;
+  }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  a {
+    text-decoration: none;
+    color: initial;
+    padding: 0 2rem 0 2rem;
+  }
+  a:visited {
+    color: initial;
+  }
+  nav a {
+    font-family: karla-r;
+    text-transform: uppercase;
+    font-size: 28px;
+    position: relative;
+    display: inline-block;
+  }
+  nav a::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    bottom: -10px;
+    left: 0;
+    height: 16px;
+    background-image: url(../img/hoverline.svg);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: contain;
+    opacity: 0;
+  }
+  nav a:hover::after {
+    opacity: 1;
+  }
+</style>
