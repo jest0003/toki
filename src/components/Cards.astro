@@ -2,19 +2,21 @@
 const { data } = Astro.props;
 ---
 
-<article class="card">
-  <div class="card-content">
-    <img
-      src={`https://caasukwezdmtsmfxxqun.supabase.co/storage/v1/object/public/Cases/${data.img}`}
-      alt="Placeholder img"
-      class="card-image"
-    />
-    <div class="card-overlay">
-      <h3 class="card-title">{data.case_name}</h3>
-      <p class="card-description">{data.case_info}</p>
+<a href=`/singlecase/${data.id}`>
+  <article class="card">
+    <div class="card-content">
+      <img
+        src={`https://caasukwezdmtsmfxxqun.supabase.co/storage/v1/object/public/Cases/${data.img}`}
+        alt="Placeholder img"
+        class="card-image"
+      />
+      <div class="card-overlay">
+        <h3 class="card-title">{data.case_name}</h3>
+        <p class="card-description">{data.case_info}</p>
+      </div>
     </div>
-  </div>
-</article>
+  </article></a
+>
 
 <style>
   .card {

@@ -3,18 +3,20 @@ const { data } = Astro.props;
 ---
 
 <article class="card">
-  <div class="card-content">
-    <img
-      src={`https://caasukwezdmtsmfxxqun.supabase.co/storage/v1/object/public/Cases/${data.img}`}
-      alt="Placeholder img"
-      class="card-image"
-    />
-    <div class="card-overlay">
-      <h3 class="card-title">{data.case_name}</h3>
-      <p class="card-description">{data.case_info}</p>
-      <a href="/cases">Read more</a>
-    </div>
-  </div>
+  <a href=`/singlecase/${data.id}` class="single-link">
+    <div class="card-content">
+      <img
+        src={`https://caasukwezdmtsmfxxqun.supabase.co/storage/v1/object/public/Cases/${data.img}`}
+        alt="Placeholder img"
+        class="card-image"
+      />
+      <div class="card-overlay">
+        <h3 class="card-title">{data.case_name}</h3>
+        <p class="card-description">{data.case_info}</p>
+        <a href=`/singlecase/${data.id}` class="read-more">Read more</a>
+      </div>
+    </div></a
+  >
 </article>
 
 <style>
@@ -23,6 +25,11 @@ const { data } = Astro.props;
     border-radius: 15px;
     overflow: hidden;
     border: 2px solid #99b093;
+  }
+
+  .single-link {
+    text-decoration: none;
+    color: inherit;
   }
 
   .card-content {
@@ -38,7 +45,7 @@ const { data } = Astro.props;
     display: block;
   }
 
-  .card-overlay a {
+  .read-more {
     color: #fff;
     text-decoration: underline;
     text-transform: uppercase;

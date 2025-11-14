@@ -30,11 +30,15 @@ const data = await fetch(endpoint, options).then((res) => res.json());
 
   .card-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 2fr;
     gap: 20px;
     padding: 20px;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+  }
+
+  .card:nth-child(4n + 2) {
+    grid-column: span 2;
   }
 </style>
