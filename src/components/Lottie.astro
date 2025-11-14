@@ -10,23 +10,26 @@ const { data } = Astro.props;
       to adapt to your needs, so you only choose the steps that matter most to
       you.
     </p>
+    <ul class="flow-steps">
+      <li>
+        <strong>Start</strong> by visualizing your concept and bringing your brand
+        story to life.
+      </li>
 
-    <p>
-      Start by visualizing your concept and bringing your brand story to life.
-    </p>
+      <li>
+        <strong>Define</strong> your design identity, ensuring clarity and purpose.
+      </li>
 
-    <p>Define your design identity, ensuring clarity and purpose.</p>
-
-    <p>
-      Scale effortlessly with our global partners, turning ideas into reality.
-    </p>
-
-    <p>
-      Refine and perfect your solution, so it doesn’t just look good, it works
-      beautifully too. Along the way, we align insights and potential, keeping
-      your vision sharp and focused.
-    </p>
-
+      <li>
+        <strong>Scale</strong> effortlessly with our global partners, turning ideas
+        into reality.
+      </li>
+      <li>
+        <strong>Refine</strong> and perfect your solution, so it doesn’t just look
+        good, it works beautifully too. Along the way, we align insights and potential,
+        keeping your vision sharp and focused.
+      </li>
+    </ul>
     <p>
       With Tóki Flow, you are in control. It’s flexible, intuitive, and built to
       fit your journey. Let’s create something meaningful, together.
@@ -69,6 +72,17 @@ const { data } = Astro.props;
     margin-bottom: 15px;
     line-height: 1.5;
   }
+
+  .flow-steps {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-family: karla-r;
+    line-height: 1.5;
+    font-size: clamp(18px, 2.5vw, 20px);
+    color: #292e2b;
+  }
+
   #lottie-animation {
     max-width: 600px;
     width: 100%;
