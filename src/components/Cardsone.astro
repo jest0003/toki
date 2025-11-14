@@ -16,18 +16,18 @@ const data = await fetch(endpoint, options).then((res) => res.json());
 ---
 
 <h1>Our cases</h1>
-<section class="card-grid">
+<section class="card-flex">
   {data.map((product) => <Card data={product} />)}
 </section>
 <Button variant="primary">See our cases</Button>
 
 <style>
-  .card-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+  .card-flex {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
     margin-left: 1em;
     margin-bottom: 2em;
-    justify-items: left;
   }
 
   h1 {

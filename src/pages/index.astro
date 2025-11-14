@@ -3,10 +3,28 @@ import Layout from "../layouts/Layout.astro";
 import Cardsone from "../components/cardsone.astro";
 import Lottie from "../components/Lottie.astro";
 import Hero from "../components/Hero.astro";
+import Button from "../components/Button.astro";
 ---
 
 <Layout>
   <Hero />
   <Lottie />
+  <section class="cta-section">
+    <h2>Ready to explore TÓKI flow?</h2>
+    <Button variant="primary">Contact us</Button>
+  </section>
   <Cardsone />
 </Layout>
+
+<style>
+  .cta-section {
+    text-align: right;
+    margin-right: 70px;
+    color: #38485c;
+  }
+
+  .cta-section h2 {
+    font-family: libre-i;
+    margin-bottom: 40px;
+  }
+</style>

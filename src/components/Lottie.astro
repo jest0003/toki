@@ -2,10 +2,76 @@
 const { data } = Astro.props;
 ---
 
-<script
-  src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.5/dist/dotlottie-wc.js"
-  type="module"></script>
-<dotlottie-wc
-  src="https://lottie.host/1246657b-38ce-49c7-80b6-8e7d032d9603/fhRbiXIshf.lottie"
-  style="width: 600px;height: 600px"
-  autoplay></dotlottie-wc>
+<section class="lottie-container">
+  <div class="lottie-text">
+    <h1>The TÓKI Flow</h1>
+    <p>
+      At Tóki, we don’t believe in one-size-fits-all. Our Tóki Flow is designed
+      to adapt to your needs, so you only choose the steps that matter most to
+      you.
+    </p>
+
+    <p>
+      Start by visualizing your concept and bringing your brand story to life.
+    </p>
+
+    <p>Define your design identity, ensuring clarity and purpose.</p>
+
+    <p>
+      Scale effortlessly with our global partners, turning ideas into reality.
+    </p>
+
+    <p>
+      Refine and perfect your solution, so it doesn’t just look good, it works
+      beautifully too. Along the way, we align insights and potential, keeping
+      your vision sharp and focused.
+    </p>
+
+    <p>
+      With Tóki Flow, you are in control. It’s flexible, intuitive, and built to
+      fit your journey. Let’s create something meaningful, together.
+    </p>
+  </div>
+  <div id="lottie-animation">
+    <script
+      src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.5/dist/dotlottie-wc.js"
+      type="module"></script>
+    <dotlottie-wc
+      src="https://lottie.host/1246657b-38ce-49c7-80b6-8e7d032d9603/fhRbiXIshf.lottie"
+      style="width: 600px;height: 600px"
+      autoplay></dotlottie-wc>
+  </div>
+</section>
+
+<style>
+  .lottie-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 60px 0;
+    flex-wrap: wrap;
+  }
+
+  .lottie-text {
+    max-width: 500px;
+    color: #38485c;
+  }
+
+  .lottie-text h1 {
+    font-size: clamp(28px, 5vw, 48px);
+    margin-bottom: 20px;
+  }
+
+  .lottie-text p {
+    font-size: clamp(18px, 2.5vw, 20px);
+    margin-bottom: 15px;
+    line-height: 1.5;
+  }
+  #lottie-animation {
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+  }
+</style>

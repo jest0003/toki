@@ -3,8 +3,49 @@ const { heroImage } = Astro.props;
 import Image from "../img/Heroflow.webp";
 ---
 
-<div class="hero-card" style={`Image: ${heroImage}`}>
-  <div class="hero-image">
-    <img src="../" alt="Hero image" />
+<div class="hero-container">
+  <div class="hero-card">
+    <img src={Image.src} alt="Heroflow" />
+    <div class="hero-text">
+      <p>Great packaging doesn’t happen by accident.</p>
+      <p>It happens by design — and by flow</p>
+    </div>
   </div>
 </div>
+
+<style>
+  .hero-container {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .hero-card {
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .hero-text {
+    position: absolute;
+    right: 10%;
+  }
+
+  .hero-text p {
+    font-family: "libre-i", sans-serif;
+    font-size: clamp(18px, 3vw, 32px);
+    color: #38485c;
+    text-align: right;
+  }
+</style>
