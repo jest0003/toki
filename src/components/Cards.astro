@@ -1,0 +1,70 @@
+---
+const { data } = Astro.props;
+---
+
+<a href=`/singlecase/${data.id}`>
+  <article class="card">
+    <div class="card-content">
+      <img
+        src={`https://caasukwezdmtsmfxxqun.supabase.co/storage/v1/object/public/Cases/${data.img}`}
+        alt="Placeholder img"
+        class="card-image"
+      />
+      <div class="card-overlay">
+        <h3 class="card-title">{data.case_name}</h3>
+        <p class="card-description">{data.case_info}</p>
+      </div>
+    </div>
+  </article></a
+>
+
+<style>
+  .card {
+    width: 250px;
+    height: 300px;
+    margin: 10px;
+    position: relative;
+    border: 2px solid #99b093;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+
+  .card-content {
+    width: 100%;
+    height: 100%;
+  }
+
+  .card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #38485cba;
+    color: white;
+    padding: 15px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+  }
+
+  .card:hover .card-overlay {
+    transform: translateY(0);
+  }
+
+  .card-title {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .card-description {
+    margin: 5px 0 0;
+    font-size: 20px;
+  }
+</style>

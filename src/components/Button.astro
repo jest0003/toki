@@ -1,0 +1,29 @@
+---
+const { variant } = Astro.props;
+---
+
+<a href="/#" class={variant}> <slot /> </a>
+
+<style>
+  a {
+    margin-left: 20px;
+  }
+  .primary {
+    background-color: #99b093;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    font-size: 2em;
+  }
+
+  .primary:hover {
+    background-color: #5b7964;
+    cursor: pointer;
+    border-radius: 20px 0px 20px 0px;
+    color: #f6f2ed;
+    transition: 0.6s;
+  }
+</style>
