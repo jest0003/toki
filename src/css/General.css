@@ -2,10 +2,20 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    background-color: #f6f2ed;
   }
   main {
-    max-width: 1160px;
-  }
+margin: 0 auto;
+margin-top: 20px;
+  padding: 0;
+  width: 100%;
+  max-width: 1160px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+}
   @font-face {
     font-family: karla-r;
     src: url(../fonts/Karla-Regular.ttf);
@@ -26,12 +36,19 @@
   h1 {
     font-family: libre-r;
     font-size: 48px;
+    color: #292e2b;
   }
   h2 {
     font-family: karla-r;
     font-size: 32px;
+    color: #292e2b;
   }
+  h3 {
+    color: #292e2b;
+    font-size: 28px;
+    font-family: karla-r;}
   p {
     font-family: karla-r;
     font-size: 18px;
+    color: #292e2b;
   }

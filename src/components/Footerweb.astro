@@ -7,14 +7,14 @@ import fHover from "../img/footer_hover.png";
 <section class="footer">
   <div>
     <nav>
-      <a href="/">About TÓKI</a>
+      <a href="/toki-family">TÓKI family</a>
       <a href="/">Contact</a>
-      <a href="/">Cases</a>
+      <a href="/casses">Cases</a>
     </nav>
     <p>Mail: hello@toki.house</p>
     <p>Phone: +45 12345678</p>
   </div>
-  <img src={logo.src} alt="Tóki's logo" />
+  <a href="/"><img src={logo.src} alt="Tóki's logo" /></a>
   <section>
     <h3>Would you like to collaborate?</h3>
     <div class="email">
@@ -73,7 +73,7 @@ import fHover from "../img/footer_hover.png";
     color: #f6f2ed;
     cursor: pointer;
   }
-  a {
+  nav a {
     text-decoration: none;
     color: #292e2b;
     font-size: 28px;
@@ -81,7 +81,7 @@ import fHover from "../img/footer_hover.png";
     margin-right: 30px;
     position: relative;
   }
-  a::after {
+  nav a::after {
     content: "";
     position: absolute;
     width: 100%;
@@ -93,7 +93,7 @@ import fHover from "../img/footer_hover.png";
     height: 16px;
     opacity: 0;
   }
-  a:hover::after {
+  nav a:hover::after {
     opacity: 1;
   }
   h3 {
