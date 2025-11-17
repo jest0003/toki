@@ -39,7 +39,7 @@ const data = await fetch(endpoint, options).then((res) => res.json());
   grid-template-columns: 1fr 1fr;
 }
 
-  .card-grid {
+.card-grid {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 20px;
@@ -49,7 +49,5 @@ const data = await fetch(endpoint, options).then((res) => res.json());
     margin: 0 auto;
   }
 
-  .card:nth-child(4n + 2) {
-    grid-column: span 2;
-  }
+
 </style>
