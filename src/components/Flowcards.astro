@@ -1,4 +1,6 @@
 ---
+import ArrowLeft from "../components/Arrow_left.astro";
+import ArrowRight from "../components/Arrow_right.astro";
 import Flowcard from "./Flowcard.astro";
 
 const endpoint =
@@ -16,19 +18,128 @@ const options = {
 };
 
 const data = await fetch(endpoint, options).then((res) => res.json());
+
+
+
 ---
 
-<section class="card-grid">
-  {data.map((product) => (
-    <Flowcard data={product} key={product.id} />
-  ))}
+<section class="carousel-wrapper">
+<div class="carousel" id="carousel">
+    {data.map((item) => (
+      <div class="carousel-item">
+        <Flowcard data={item} />
+      </div>
+    ))}
+  </div>
+
+<div class="carousel-buttons"><button class="carousel-btn prev left" aria-label="Previous"><svg width="12" height="22" viewBox="0 0 12 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.293408 10.2929L10.2934 0.292919C10.3863 0.200008 10.4966 0.12631 10.618 0.0760269C10.7394 0.0257435 10.8695 -0.000137329 11.0009 -0.000137329C11.1323 -0.000137329 11.2624 0.0257435 11.3838 0.0760269C11.5052 0.12631 11.6155 0.200008 11.7084 0.292919C11.8013 0.38583 11.875 0.49613 11.9253 0.617523C11.9756 0.738916 12.0015 0.869024 12.0015 1.00042C12.0015 1.13181 11.9756 1.26192 11.9253 1.38332C11.875 1.50471 11.8013 1.61501 11.7084 1.70792L2.41466 11.0004L11.7084 20.2929C11.896 20.4806 12.0015 20.7351 12.0015 21.0004C12.0015 21.2658 11.896 21.5203 11.7084 21.7079C11.5208 21.8956 11.2663 22.001 11.0009 22.001C10.7355 22.001 10.481 21.8956 10.2934 21.7079L0.293408 11.7079C0.200432 11.615 0.126673 11.5048 0.0763483 11.3834C0.0260239 11.262 0.000123024 11.1318 0.000123024 11.0004C0.000123024 10.869 0.0260239 10.7389 0.0763483 10.6175C0.126673 10.4961 0.200432 10.3858 0.293408 10.2929Z" fill="#292E2B"/>
+</svg></button>
+<button class="carousel-btn next right" aria-label="Next"><svg width="12" height="22" viewBox="0 0 12 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.7081 11.7081L1.70806 21.7081C1.61515 21.801 1.50485 21.8747 1.38345 21.9249C1.26206 21.9752 1.13195 22.0011 1.00056 22.0011C0.869161 22.0011 0.739053 21.9752 0.61766 21.9249C0.496267 21.8747 0.385966 21.801 0.293056 21.7081C0.200145 21.6151 0.126445 21.5048 0.0761623 21.3835C0.0258797 21.2621 0 21.132 0 21.0006C0 20.8692 0.0258797 20.7391 0.0761623 20.6177C0.126445 20.4963 0.200145 20.386 0.293056 20.2931L9.58681 11.0006L0.293056 1.70806C0.105415 1.52042 -1.97712e-09 1.26592 0 1.00056C1.97712e-09 0.735192 0.105415 0.480697 0.293056 0.293056C0.480696 0.105415 0.735192 1.97712e-09 1.00056 0C1.26592 -1.97712e-09 1.52042 0.105415 1.70806 0.293056L11.7081 10.2931C11.801 10.3859 11.8748 10.4962 11.9251 10.6176C11.9754 10.739 12.0013 10.8691 12.0013 11.0006C12.0013 11.132 11.9754 11.2621 11.9251 11.3835C11.8748 11.5049 11.801 11.6152 11.7081 11.7081Z" fill="#292E2B"/>
+</svg></button></div>
 </section>
 
 <style>
-    .card-grid {
-      margin-top: 30px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 25px;
+  .left {
+        display: inline;
+     max-width: fit-content;
+        border-radius: 46px;
+        padding-left: 20px;
+        padding-right: 25px;
+        padding-top: 14px;
+        padding-bottom: 14px;
+        background-color: #DED2BA;
+        border-style: none;
     }
+
+    .left:hover {
+        background-color: #B47852;
+        cursor: pointer;
+    }
+  .right {
+        display: inline;
+     max-width: fit-content;
+        border-radius: 46px;
+        padding-left: 25px;
+        padding-right: 20px;
+        padding-top: 14px;
+        padding-bottom: 14px;
+        background-color: #DED2BA;
+        border-style: none;
+    }
+
+    .right:hover {
+        background-color: #B47852;
+        cursor: pointer;
+    }
+  .carousel-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 1200px;
+  margin: 40px auto;
+}
+   .carousel {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.3s ease;
+}
+.carousel-item {
+  min-width: calc(33.333% - 20px); /* 3 cards på desktop */
+}
+
+@media (max-width: 800px) {
+  .carousel-item {
+    min-width: calc(50% - 20px);
+  }
+}
+.carousel-btn {
+  display: inline-flex;
+  align-items: center;        
+  justify-content: center;    
+
+}
+.carousel-buttons {
+  display: flex;
+  justify-content: center; /* centrer knapperne under karrusellen */
+  margin-top: 20px;
+   gap: 50px;
+}
 </style>
+
+<script>
+window.addEventListener("DOMContentLoaded", () => {
+  const carousel = document.querySelector("#carousel")!;
+  const prev = document.querySelector(".prev")!;
+  const next = document.querySelector(".next")!;
+  let index = 0;
+
+  function updateCarousel() {
+  const firstChild = carousel.children[0];
+  const itemWidth = firstChild.offsetWidth;
+  carousel.style.transform = `translateX(${-index * itemWidth}px)`;
+}
+
+  function visibleCardsCount() {
+    const w = window.innerWidth;
+    if (w <= 800) return 1;
+    if (w <= 1000) return 2;
+    return 3;
+  }
+
+  next.addEventListener("click", () => {
+    const visible = visibleCardsCount();
+    if (index < carousel.children.length - visible) index++;
+    updateCarousel();
+  });
+
+  prev.addEventListener("click", () => {
+    if (index > 0) index--;
+    updateCarousel();
+  });
+
+  window.addEventListener("resize", updateCarousel);
+  updateCarousel();
+});
+</script>
