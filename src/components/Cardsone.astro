@@ -15,25 +15,24 @@ const options = {
 const data = await fetch(endpoint, options).then((res) => res.json());
 ---
 
-<Layout>
-  <h1>Our cases</h1>
-  <section class="card-grid">
-    {data.map((product) => <Card data={product} />)}
-  </section>
-  <Button variant="primary">See our cases</Button>
-</Layout>
+<h2>Our cases</h2>
+<section class="card-flex">
+  {data.map((product) => <Card data={product} />)}
+</section>
+<Button variant="primary">See our cases</Button>
 
 <style>
-  .card-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+  .card-flex {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
     margin-left: 1em;
     margin-bottom: 2em;
-    justify-items: left;
   }
 
-  h1 {
-    margin-left: 0.5em;
-    font-size: 3em;
+  h2 {
+    margin-left: 1em;
+    margin-top: 2em;
+    font-family: libre-r;
   }
 </style>
