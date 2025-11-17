@@ -1,0 +1,34 @@
+---
+import Flowcard from "./Flowcard.astro";
+
+const endpoint =
+  "https://vfvcnthignaaejdwtexj.supabase.co/rest/v1/TokiFlow?select=*";
+
+const key =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZmdmNudGhpZ25hYWVqZHd0ZXhqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjMzNzAzODMsImV4cCI6MjA3ODk0NjM4M30.OW19hKAKska6ncLcrjmE_hsYWiyaSX4A4YOxHbIngj8";
+
+const options = {
+  method: "GET",
+  headers: {
+    apikey: key,
+    Authorization: `Bearer ${key}`
+  },
+};
+
+const data = await fetch(endpoint, options).then((res) => res.json());
+---
+
+<section class="card-grid">
+  {data.map((product) => (
+    <Flowcard data={product} key={product.id} />
+  ))}
+</section>
+
+<style>
+    .card-grid {
+      margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+    }
+</style>
