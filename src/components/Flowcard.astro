@@ -1,0 +1,38 @@
+---
+const { data } = Astro.props;
+---
+
+
+<section class="flow_card">
+  <img
+    src={`https://vfvcnthignaaejdwtexj.supabase.co/storage/v1/object/public/TokiFlow/${data.img}`}
+    alt={data.flow_name}
+  />
+  <h2>{data.flow_name}</h2>
+  <div>
+    <p>{data.detail_flow}</p>
+    <p>{data.detail_costumer}</p>
+  </div>
+</section>
+
+<style>
+  .flow_card {
+    max-height: 600px;
+    min-height: 275px;
+    min-width: 175px;
+    max-width: 370px;
+  }
+  img {
+    height: 218px;
+    width: 100%;
+    border-radius: 25px;
+  object-fit: cover;
+  display: block;
+  }
+
+  @media (min-width: 800px) {
+    img {
+      height: 420px;
+    }
+  }
+</style>
