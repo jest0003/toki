@@ -1,8 +1,7 @@
 ---
 const { data } = Astro.props;
 ---
-
-<article class="card">
+<article id=`card-${data.id}` class="card-style">
   <a href=`/singlecase/${data.id}` class="single-link">
     <div class="card-content">
       <img
@@ -20,7 +19,8 @@ const { data } = Astro.props;
 </article>
 
 <style>
-  .card {
+  .card-style
+  {
     height: 385px;
     border-radius: 15px;
     overflow: hidden;
@@ -63,7 +63,7 @@ const { data } = Astro.props;
     transition: transform 0.3s ease;
   }
 
-  .card:hover .card-overlay {
+  .card-style:hover .card-overlay {
     transform: translateY(0);
   }
 
@@ -71,10 +71,21 @@ const { data } = Astro.props;
     margin: 0;
     font-size: 24px;
     font-weight: bold;
+    color: white;
   }
 
   .card-description {
     margin: 5px 0 10px;
     font-size: 20px;
+    color: white;
   }
+
+  #card-1, #card-5, #card-6, #card-14, #card-15{
+    grid-column: span 2;
+  }
+
+  #card-3, #card-4, #card-12, #card-13,  #card-16 {
+    grid-column: span 3;
+  }
+
 </style>

@@ -1,5 +1,4 @@
 ---
-import Layout from "../layouts/Layout.astro";
 import Card from "../components/Cardstwo.astro";
 const endpoint =
   "https://caasukwezdmtsmfxxqun.supabase.co/rest/v1/Cases?limit=10";
@@ -13,14 +12,14 @@ const options = {
 };
 const data = await fetch(endpoint, options).then((res) => res.json());
 ---
-
-<Layout>
+<section class="introduction-grid">
   <h1>Our cases</h1>
-  <p>Short introduction text...</p>
+  <p>Short introduction text - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea  commodo consequat. Duis aute irure dolor in reprehenderit in voluptate  velit esse cillum dolore eu fugiat nulla pariatur.</p>
+  </section>
   <section class="card-grid">
     {data.map((product) => <Card data={product} />)}
   </section>
-</Layout>
+
 
 <style>
   h1 {
@@ -28,9 +27,20 @@ const data = await fetch(endpoint, options).then((res) => res.json());
     font-size: 3em;
   }
 
-  .card-grid {
+  p{
+    margin: 20px;
+    grid-column: 1/2;
+  }
+
+.introduction-grid{
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.card-grid {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: repeat(5, 1fr);
     gap: 20px;
     padding: 20px;
     width: 100%;
@@ -38,7 +48,12 @@ const data = await fetch(endpoint, options).then((res) => res.json());
     margin: 0 auto;
   }
 
-  .card:nth-child(4n + 2) {
-    grid-column: span 2;
+@media only screen and (max-width: 600px) {
+  .card-grid, .introduction-grid{
+     display: grid;
+      grid-template-columns: 1fr;
   }
+
+}
+
 </style>
