@@ -1,7 +1,30 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Familycard from "../components/Familycard.astro";
 ---
 
 <Layout>
-  <h1>Tóki family</h1>
+  <div>
+    <h1>Tóki family</h1>
+    <p>
+      TÓKI is a strategic design house for packaging with purpose. We create
+      solutions that carry your product, your story, and your identity - making
+      packaging a silent hero that works across the entire value chain. From
+      insight to impact, we balance strategy, storytelling, and sustainability
+      to deliver packaging that truly matters.
+    </p>
+  </div>
+  <div>
+    <h2>Meet the family</h2>
+    <Familycard
+      name="Family memember 1"
+      experience="Experience with xyz"
+      email="mail1@mail.dk"
+    />
+    <Familycard
+      name="Family memember 2"
+      experience="Experience with abc"
+      email="mail2@mail.dk"
+    />
+  </div>
 </Layout>
