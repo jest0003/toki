@@ -12,7 +12,6 @@ const options = {
 };
 const data = await fetch(endpoint, options).then((res) => res.json());
 ---
-
 <section class="introduction-grid">
   <h1>Our cases</h1>
   <p>Short introduction text - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea  commodo consequat. Duis aute irure dolor in reprehenderit in voluptate  velit esse cillum dolore eu fugiat nulla pariatur.</p>
@@ -41,7 +40,7 @@ const data = await fetch(endpoint, options).then((res) => res.json());
 
 .card-grid {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: repeat(5, 1fr);
     gap: 20px;
     padding: 20px;
     width: 100%;
@@ -49,5 +48,12 @@ const data = await fetch(endpoint, options).then((res) => res.json());
     margin: 0 auto;
   }
 
+@media only screen and (max-width: 600px) {
+  .card-grid, .introduction-grid{
+     display: grid;
+      grid-template-columns: 1fr;
+  }
+
+}
 
 </style>
