@@ -1,6 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Familycard from "../components/Familycard.astro";
+import c1 from "../img/collab1.jpg";
+import c2 from "../img/collab2.jpg";
+import c3 from "../img/collab3.jpg";
+import c4 from "../img/collab4.jpg";
 ---
 
 <Layout>
@@ -14,17 +18,50 @@ import Familycard from "../components/Familycard.astro";
       to deliver packaging that truly matters.
     </p>
   </div>
-  <div>
+  <section>
     <h2>Meet the family</h2>
-    <Familycard
-      name="Family memember 1"
-      experience="Experience with xyz"
-      email="mail1@mail.dk"
-    />
-    <Familycard
-      name="Family memember 2"
-      experience="Experience with abc"
-      email="mail2@mail.dk"
-    />
-  </div>
+    <div class="family">
+      <Familycard
+        name="Family memember 1"
+        experience="Experience with xyz"
+        email="mail1@mail.dk"
+      />
+      <Familycard
+        name="Family memember 2"
+        experience="Experience with abc"
+        email="mail2@mail.dk"
+      />
+    </div>
+  </section>
+  <section>
+    <h2>Meet our collaborators</h2>
+    <div class="collaborators">
+      <img src={c1.src} alt="Collaborator 1 logo" />
+      <img src={c2.src} alt="Collaborator 2 logo" />
+      <img src={c3.src} alt="Collaborator 3 logo" />
+      <img src={c4.src} alt="Collaborator 4 logo" />
+    </div>
+  </section>
 </Layout>
+<style>
+  p {
+    max-width: 65ch;
+  }
+  .family {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+  .collaborators {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+  .collaborators img {
+    max-width: 100%;
+    border-radius: 1rem;
+    object-fit: cover;
+  }
+</style>

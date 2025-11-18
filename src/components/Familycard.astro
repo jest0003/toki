@@ -1,15 +1,47 @@
 ---
+import p1 from "../img/familymember1.jpg";
+// import p1-hover from "../img/familymemeber1-hover.jpg";
+// import p2 from "../img/familymemeber2.jpg";
+// import p2 from "../img/familymemeber2-hover.jpg";
 const name = Astro.props.name;
 const experience = Astro.props.experience;
 const email = Astro.props.email;
 ---
 
 <div class="card">
-  <img src="" alt="" />
+  <img src={p1.src} alt="Picture of family member 1" />
   <div class="card_text">
     <h3>{name}</h3>
     <p>{experience}</p>
     <p>{email}</p>
   </div>
 </div>
-<style></style>
+<style>
+  .card {
+    max-width: 100%;
+    border-radius: 1rem;
+    background-color: #ded2ba;
+    margin-bottom: 2rem;
+  }
+  img {
+    max-width: 100%;
+    height: 80%;
+    object-fit: cover;
+    border-radius: 1rem 1rem 0 0;
+  }
+  .card_text {
+    height: 20%;
+    background-color: #ded2ba;
+    border-radius: 1rem;
+  }
+  /* h3,
+  p,
+  img {
+    padding: 0;
+    margin: 0;
+  } */
+  * {
+    padding: 0;
+    margin: 0;
+  }
+</style>
