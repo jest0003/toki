@@ -8,40 +8,42 @@ import c4 from "../img/collab4.jpg";
 ---
 
 <Layout>
-  <div>
-    <h1>Tóki family</h1>
-    <p>
-      TÓKI is a strategic design house for packaging with purpose. We create
-      solutions that carry your product, your story, and your identity - making
-      packaging a silent hero that works across the entire value chain. From
-      insight to impact, we balance strategy, storytelling, and sustainability
-      to deliver packaging that truly matters.
-    </p>
+  <div class="main">
+    <div>
+      <h1>Tóki family</h1>
+      <p>
+        TÓKI is a strategic design house for packaging with purpose. We create
+        solutions that carry your product, your story, and your identity -
+        making packaging a silent hero that works across the entire value chain.
+        From insight to impact, we balance strategy, storytelling, and
+        sustainability to deliver packaging that truly matters.
+      </p>
+    </div>
+    <section>
+      <h2>Meet the family</h2>
+      <div class="family">
+        <Familycard
+          name="Family memember 1"
+          experience="Experience with xyz"
+          email="mail1@mail.dk"
+        />
+        <Familycard
+          name="Family memember 2"
+          experience="Experience with abc"
+          email="mail2@mail.dk"
+        />
+      </div>
+    </section>
+    <section>
+      <h2>Meet our collaborators</h2>
+      <div class="collaborators">
+        <img src={c1.src} alt="Collaborator 1 logo" />
+        <img src={c2.src} alt="Collaborator 2 logo" />
+        <img src={c3.src} alt="Collaborator 3 logo" />
+        <img src={c4.src} alt="Collaborator 4 logo" />
+      </div>
+    </section>
   </div>
-  <section>
-    <h2>Meet the family</h2>
-    <div class="family">
-      <Familycard
-        name="Family memember 1"
-        experience="Experience with xyz"
-        email="mail1@mail.dk"
-      />
-      <Familycard
-        name="Family memember 2"
-        experience="Experience with abc"
-        email="mail2@mail.dk"
-      />
-    </div>
-  </section>
-  <section>
-    <h2>Meet our collaborators</h2>
-    <div class="collaborators">
-      <img src={c1.src} alt="Collaborator 1 logo" />
-      <img src={c2.src} alt="Collaborator 2 logo" />
-      <img src={c3.src} alt="Collaborator 3 logo" />
-      <img src={c4.src} alt="Collaborator 4 logo" />
-    </div>
-  </section>
 </Layout>
 <style>
   p {
@@ -60,8 +62,26 @@ import c4 from "../img/collab4.jpg";
     align-items: center;
   }
   .collaborators img {
-    max-width: 100%;
+    width: 100%;
     border-radius: 1rem;
     object-fit: cover;
+  }
+  @media (width>800px) {
+    .family {
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+      align-items: center;
+    }
+    .collaborators {
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+    }
+  }
+  @media (width<1160px) {
+    .main {
+      margin: 1.5rem;
+    }
   }
 </style>
