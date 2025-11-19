@@ -15,39 +15,22 @@ const options = {
 const data = await fetch(endpoint, options).then((res) => res.json());
 ---
 
-<div class="cases-container">
-  <h2>Our cases</h2>
-  <section class="card-flex">
-    {data.map((product) => <Card data={product} />)}
-  </section>
-  <Button variant="primary" class="see-cases-button">See our cases</Button>
-</div>
+<h2>Our cases</h2>
+<section class="card-flex">
+  {data.map((product) => <Card data={product} />)}
+</section>
 
 <style>
-  .cases-container {
-    padding-left: 1em;
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: left;
-  }
-
   .card-flex {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: 1em;
+    justify-content: space-evenly;
+    gap: 2em;
     margin-bottom: 2em;
   }
 
   h2 {
-    margin-left: 10px;
     margin-top: 2em;
     font-family: libre-r;
-  }
-
-  .see-cases-button {
-    display: inline-block;
-    margin-left: 10px;
-    margin-bottom: 2em;
   }
 </style>
