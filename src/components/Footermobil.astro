@@ -1,0 +1,139 @@
+---
+import "../css/General.css";
+import logo from "../img/TokiLogo.png";
+import fHover from "../img/footer_hover.png";
+---
+
+<section class="footer">
+  <div class="max">
+    <div>
+      <nav class="flex-col">
+        <a href="/toki-family">TÓKI family</a>
+        <a href="/">Contact</a>
+        <a href="/casses">Cases</a>
+      </nav>
+      
+    </div>
+    <div class="spacing">
+    <a href="/"><img src={logo.src} alt="Tóki's logo" /></a>
+    </div>
+    <section class="spacing">
+      <h3>Would you like to collaborate?</h3>
+      <div class="email">
+        <input type="email" placeholder="Type your email here..." />
+        <button
+          ><svg width="24" height="20" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M23.7075 10.7081L14.7075 19.7081C14.5199 19.8957 14.2654 20.0011 14 20.0011C13.7346 20.0011 13.4801 19.8957 13.2925 19.7081C13.1049 19.5204 12.9994 19.2659 12.9994 19.0006C12.9994 18.7352 13.1049 18.4807 13.2925 18.2931L20.5863 11.0006H1C0.734784 11.0006 0.48043 10.8952 0.292893 10.7077C0.105357 10.5201 0 10.2658 0 10.0006C0 9.73534 0.105357 9.48099 0.292893 9.29345C0.48043 9.10591 0.734784 9.00056 1 9.00056H20.5863L13.2925 1.70806C13.1049 1.52042 12.9994 1.26592 12.9994 1.00056C12.9994 0.735192 13.1049 0.480697 13.2925 0.293056C13.4801 0.105415 13.7346 0 14 0C14.2654 0 14.5199 0.105415 14.7075 0.293056L23.7075 9.29306C23.8005 9.38593 23.8742 9.49622 23.9246 9.61762C23.9749 9.73901 24.0008 9.86914 24.0008 10.0006C24.0008 10.132 23.9749 10.2621 23.9246 10.3835C23.8742 10.5049 23.8005 10.6152 23.7075 10.7081Z"
+              fill="#F6F2ED"></path>
+          </svg>
+        </button>
+      </div>
+    </section>
+    <div class="spacing">
+        <p>Mail: hello@toki.house</p>
+        <p>Phone: +45 12345678</p>
+      </div>
+  </div>
+</section>
+
+<style>
+.flex-col{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+}
+.flex-col a{
+margin-bottom: 5px;
+}
+
+  .footer {
+    background-image: linear-gradient(to bottom, #f6f2ed, #ded2ba);
+    padding-top: 60px;
+    padding-bottom: 30px;
+  }
+  .max {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+  }
+
+
+  .email {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+  }
+  svg {
+    margin-top: 5px;
+  }
+  nav {
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+  input {
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+    height: 30px;
+    margin: 0;
+    border-style: solid 1px #38485c;
+    border-right: none;
+    padding-left: 10px;
+  }
+  input:focus {
+    outline: none;
+  }
+  button {
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    height: 36px;
+    margin: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-style: none;
+    background-color: #38485c;
+    color: #f6f2ed;
+    cursor: pointer;
+  }
+  nav a {
+    text-decoration: none;
+    color: #292e2b;
+    font-size: 28px;
+    font-family: karla-r;
+    margin-right: 30px;
+    position: relative;
+  }
+  nav a::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    bottom: -7px;
+    left: 0;
+    background-image: url(../img/footer_hover.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 16px;
+    opacity: 0;
+  }
+  nav a:hover::after {
+    opacity: 1;
+  }
+  h3 {
+    color: #292e2b;
+    font-size: 28px;
+    font-family: karla-r;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+  p {
+    color: #292e2b;
+    font-size: 14px;
+    font-family: karla-r;
+    margin: 3px;
+  }
+
+.spacing{
+ margin-top: 20px;
+}
+
+</style>
