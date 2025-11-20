@@ -40,16 +40,19 @@ import fHover from "../img/footer_hover.png";
 
 <section class="footer-mobil">
   <div class="max">
-    <div>
+    <div class="footer-grid">
       <nav class="flex-col">
         <a href="/toki-family">TÓKI family</a>
         <a href="/">Contact</a>
         <a href="/casses">Cases</a>
       </nav>
+      <div class="spacing">
+        <a href="/"><img src={logo.src} alt="Tóki's logo" /></a>
+      </div>
     </div>
-    <div class="spacing">
+    <!-- <div class="spacing">
       <a href="/"><img src={logo.src} alt="Tóki's logo" /></a>
-    </div>
+    </div> -->
     <section class="spacing">
       <h3>Would you like to collaborate?</h3>
       <div class="email">
@@ -81,6 +84,12 @@ import fHover from "../img/footer_hover.png";
     background-image: linear-gradient(to bottom, #f6f2ed, #ded2ba);
     padding-top: 60px;
     padding-bottom: 30px;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
   }
   .max {
     max-width: 1160px;
